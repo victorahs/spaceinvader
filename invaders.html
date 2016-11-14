@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Space invanders</title>
+		<link rel="stylesheet" type="text/css" href="css/invaders.css"/>
+		<script>
+		function JouerSon(id) {
+       var sound = document.getElementById(id);
+       sound.play();
+   		}
+		</script>
+
+	</head>
+	<body>
+		<header id="accueil">
+						<embed src="bibliomusic/defaite.mp3" autostart="true" loop="0" hidden="true"></embed>
+
+						<div id="invaders">
+
+							<h2>Space</h2> <h1> Invaders </h1>
+
+						</div>
+
+						<div id="points">
+
+							<figure id="ennemis1">
+
+								<img id="img" src="img/invadersviolet.png">
+								<figcaption>= 10 pts</figcaption>
+							</figure>
+							<figure  id="ennemis2">
+								<img id="img" src="img/invadersblanc.png" title="20 pts" >
+								<figcaption>= 20 pts</figcaption>
+
+							</figure>
+							<figure id="ennemis3">
+								<img id="img" src="img/invadersbleu.png" title="30 pts">
+								<figcaption >= 30 pts</figcaption>
+
+							</figure>
+
+						</div>
+
+						<div id="commencer">
+
+							<p onclick="start();"> Commencer la partie</p>
+
+						</div>
+
+						<div id="touches">
+
+							<p> Comment jouer ? Fleches gauche-droite pour se deplacer. Espace pour tirer. Bonne chance ! </p>
+
+						</div>
+
+		</header>
+
+		<script type="text/javascript">
+
+		// initialisation du jeu + variables globales
+
+		var joueur = 0;
+		var scoreTab = [];
+		var temps = 0;
+		var vitesse = 0;
+		var niveau = 0;
+		var score = 0;
+		// var score1 = 20;
+		var missileTir = false;
+		var ennemiTab = []; // tableau d'ennemis
+		var messagefin = "";
+
+		</script>
+
+		<main id="jeu" class="masque" >
+
+			<section id="entete">
+
+					<h2>Space</h2> <h1> Invaders </h1>
+					<p id="score"></p>
+
+			</section>
+
+			<section id="espaceJeu">
+
+					<!-- Nommer les classes avec le même nom de l'identifiant et ajouter à la fin du mot "Cl" pour class et "Id" pour identifiant -->
+
+					<section id="ennemiId"> <!-- bloc dans lequel on va générer les ennemis -->
+
+					</section>
+
+					<div class="missileCl" id="missileId" >
+					</div>
+
+					<section class="tireurCl" id="tireurId"> </section>
+
+			</section>
+
+
+		</main>
+
+		<footer id="fin" class="masque">
+
+							<p id="message">
+
+							</p>
+
+							<p id="scoreFin">
+
+							</p>
+
+							<div id="commencer">
+
+								<p onclick="start();"> Rejouer </p>
+
+							</div>
+
+							<div id="commencer">
+
+								<p onclick="document.getElementById('accueil').classList.remove('masque');document.getElementById('fin').classList.add('masque'); "> Retour accueil </p>
+
+							</div>
+						</div>
+
+				<audio autoplay="false" id="shoot" src="bibliomusic/shoot.wav"></audio>
+        <audio autoplay="false" id="explose" src="bibliomusic/explosion.wav"></audio>
+				<script type="text/javascript" src="js/Initialisation.js"></script>
+				<script type="text/javascript" src="js/Start.js"></script>
+				<script type="text/javascript" src="js/Ennemi.js"></script>
+				<script type="text/javascript" src="js/Tireur.js"></script>
+				<script type="text/javascript" src="js/Missile.js"></script>
+				<script type="text/javascript" src="js/GenerationEnnemis.js"></script>
+				<script type="text/javascript" src="js/FinJeu.js"></script>
+				<script type="text/javascript" src="js/Deplacement.js"></script>
+				<script type="text/javascript" src="js/GenerationScore.js"></script>
+
+		</footer>
+	</body>
+</html>

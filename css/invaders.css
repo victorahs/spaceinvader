@@ -1,0 +1,193 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+@-webkit-keyframes blinker {
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
+}
+
+@font-face{
+
+  font-family: "space_invaders";
+
+  src: url(space_invaders_Regular/space_invaders.ttf);
+}
+
+body {
+  padding-top : 10vh;
+  font-family: space_invaders;
+  background-color: #000;
+}
+
+.masque {
+  display: none
+}
+
+header {
+  background-color: #000;
+  width: 60vw;
+  height: 70vh;
+  margin: auto;
+  margin-bottom: 1%;
+}
+
+main{
+  width: 60vw;
+  height: 70vh;
+  margin: auto;
+  background-color: #f00;
+}
+
+#fin {
+  background-color: #000;
+  width: 60vw;
+  height: 70vh;
+  margin: auto;
+  margin-bottom: 1%;
+  color: #f00;
+  font-size:1.5em;
+  text-align: center;
+}
+
+#invaders {
+  text-align: center;
+  padding-top: 5%;
+}
+
+h1 {
+  color: #0f0;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+h2 {
+  color: #fff;
+  font-size: 1.875em;
+  margin: 0;
+}
+
+#points {
+  text-align: center;
+  /*margin-left: 40%;
+*/
+    width: 30%;
+    margin:auto;
+  color: #fff;
+
+  margin-top: 0;
+}
+
+#img{
+  max-width: 3em;
+  height: auto;
+}
+
+figcaption {
+  font-size: 1em;
+  float: right;
+  margin-top: 6%;
+}
+
+#ennemis1, #ennemis2, #ennemis3 {
+  display: inline-block;
+}
+
+#commencer {
+  font-size: 2.25em;
+  text-align: center;
+  color: #a5f;
+  -webkit-animation-name: blinker;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+  -webkit-animation-duration: 1s;
+}
+
+#touches {
+  padding-bottom: : 4%;
+  font-size: 0.625em;
+  text-align: center;
+  color: #fff;
+}
+
+#box {
+  position: absolute;
+  background-color: #f00;
+  height: 200px;
+  width: 200px;
+}
+
+#entete{
+  height: 15vh;
+  background-color: #000;
+  width: 100%;
+  color: #fff;
+  padding-top: 1%;
+}
+
+#espaceJeu{
+  background-color: #000;
+  height: 60vh;
+  position: relative;
+  background-image: url(../img/space-min.png);
+  -webkit-animation: mymove 5s infinite;
+  animation: mymove 3s infinite linear;
+}
+
+@keyframes mymove {
+  0% {background-position: 0 0;}
+  100% {background-position: 0 675px;}
+}
+
+#ennemiId{
+  width: 20vw;
+  background-color: yellow;
+  position : absolute;
+}
+
+.ennemiCl{
+  width: 2.5em;
+  height: 1.5em;
+  position: absolute;
+  display: block;
+}
+
+#missileId{
+  width: 0.2em;
+  height: 1em;
+  background-color: #fff;
+  position: absolute;
+}
+
+#tireurId{
+  width: 3.2em;
+  background-image: url(../img/vaisseau.png);
+  height: 2em;
+  position: absolute;
+}
+
+
+@media screen and (max-width: 1024px)
+{
+  /*pour les ecrans inférieur à 1024px */
+  #commencer, #fin, h2{
+    font-size: 1.875em;
+  }
+  h1{
+    font-size: 2.2em
+  }
+}
+@media screen and (max-width: 640px)
+{
+  /*pour les ecrans inférieur à 640px */
+  #commencer, #fin, h2{
+    font-size: 1em;
+  }
+  h1{
+    font-size: 1.875em
+  }
+}
